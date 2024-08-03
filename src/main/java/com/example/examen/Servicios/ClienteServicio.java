@@ -9,11 +9,15 @@ import com.example.examen.Modelos.ClienteModelo;
 import com.example.examen.Modelos.CuotaModelo;
 import com.example.examen.Modelos.PrestamosModelos;
 import com.example.examen.Repositorios.ClienteRepositorio;
+import com.example.examen.Repositorios.CuotaRepositorio;
 
 @Service
 public class ClienteServicio {
     @Autowired
     private ClienteRepositorio clienteRepositorio;
+
+    @Autowired
+    private CuotaRepositorio cuotaRepositorio;
 
     public ClienteModelo crear(ClienteModelo c) {
         if (!clienteRepositorio.existsById(c.getDni())) {
@@ -23,12 +27,10 @@ public class ClienteServicio {
             for (PrestamosModelos p : P) {
                 if (p != null) {
                     p.setCliente(c);
-                    CuotaModelo cuota = new CuotaModelo();
-                    
+
                 }
 
             }
-
 
             clientenuevo = c;
             return clienteRepositorio.save(clientenuevo);
