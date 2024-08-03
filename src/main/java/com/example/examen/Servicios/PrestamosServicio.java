@@ -1,6 +1,7 @@
 package com.example.examen.Servicios;
 
 import java.util.List;
+import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -28,5 +29,9 @@ public class PrestamosServicio {
 
     public List<PrestamosModelos> ver() {
         return prestamoRepositorio.findAll();
+    }
+
+    public PrestamosModelos buscarporId(Integer id) {
+        return prestamoRepositorio.getById(id);
     }
 }
