@@ -33,7 +33,7 @@ public class PrestamoController {
 
     }
 
-    @GetMapping("/buscarid/{dni}")
+    @GetMapping("/buscarid/{id}")
     public PrestamosModelos postMethodName(@PathVariable Integer id) {
         return prestamosServicio.buscarporId(id);
 
